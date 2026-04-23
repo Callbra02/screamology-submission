@@ -32,7 +32,6 @@ public class StartScene : MonoBehaviour
     {
         HandleNavigation();
         HandleSelection();
-
     }
 
     private void ClampSelection()
@@ -76,7 +75,6 @@ public class StartScene : MonoBehaviour
                 Select();
             }
         }
-
     }
 
     private void Select()
