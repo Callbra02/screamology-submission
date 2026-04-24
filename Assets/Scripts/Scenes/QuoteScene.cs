@@ -38,8 +38,8 @@ public class QuoteScene : MonoBehaviour
 
         if (sceneTimer < quoteIntroTime + sceneDelay)
         {
-            quoteText.color = LerpColor(quoteText.color, defaultTextColor, 4.0f);
-            authorText.color = LerpColor(authorText.color, defaultTextColor, 4.0f);
+            quoteText.color = BHelper.LerpColor(quoteText.color, defaultTextColor, 4.0f);
+            authorText.color = BHelper.LerpColor(authorText.color, defaultTextColor, 4.0f);
         }
 
         if (sceneTimer > maxSceneTime + sceneDelay)
@@ -54,21 +54,13 @@ public class QuoteScene : MonoBehaviour
 
         if (sceneTimer >= quoteTimerMax + sceneDelay)
         {
-            quoteText.color = LerpColor(quoteText.color, Color.clear, 3.0f);
+            quoteText.color = BHelper.LerpColor(quoteText.color, Color.clear, 3.0f);
         }
 
         if (sceneTimer >= authorTimerMax + sceneDelay)
         {
-            authorText.color = LerpColor(authorText.color, Color.clear, 3.0f);
+            authorText.color = BHelper.LerpColor(authorText.color, Color.clear, 3.0f);
         }
-    }
-
-    private Color LerpColor(Color colorA, Color colorB, float percentage)
-    {
-        if (colorA != colorB)
-            return Color.Lerp(colorA, colorB, percentage * Time.deltaTime);
-        else
-            return colorB;
     }
 
     private void SetQuoteToTransparent()
