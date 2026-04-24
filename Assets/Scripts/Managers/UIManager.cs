@@ -4,19 +4,19 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public Image blackOverlay;
-    private bool _overlayEnabled = true;
+    public bool overlayEnabled = true;
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _overlayEnabled = true;
+        overlayEnabled = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_overlayEnabled)
+        if (overlayEnabled)
         {
             LerpSolid();
         }
